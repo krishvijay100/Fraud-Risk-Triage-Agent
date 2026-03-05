@@ -1,0 +1,28 @@
+# Python
+backend/.venv/
+backend/.venv311/
+backend/__pycache__/
+backend/app/__pycache__/
+backend/tests/__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Environment secrets — never commit
+backend/.env
+.env
+
+# Generated triage outputs (runtime artifacts)
+out/triage_results.json
+out/audit_log.jsonl
+out/overrides.jsonl
+
+# Next.js
+web/.next/
+web/node_modules/
+web/.env.local
+
+# OS
+.DS_Store
+Thumbs.db
