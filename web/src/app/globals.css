@@ -1,0 +1,29 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background: #0f0f0f;
+  color: #e0e0e0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 12px;
+  background: #1a1a1a;
+  color: #e0e0e0;
+  border: 1px solid #333;
+  border-radius: 3px;
+  padding: 4px 8px;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 1px solid #555;
+}
