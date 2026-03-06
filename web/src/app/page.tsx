@@ -444,7 +444,7 @@ export default function Home() {
         <span style={{ fontWeight: "bold", fontSize: 15, letterSpacing: 1 }}>FRAUD TRIAGE</span>
         {result && (
           <span style={{ color: "#555", fontSize: 11 }}>
-            Run {result.run_id.slice(0, 8)} — {new Date(result.generated_at).toLocaleString()}
+            Run {result.run_id.slice(0, 8)} — {new Date(result.generated_at).toLocaleString(undefined, { year: "numeric", month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit", timeZoneName: "short" })}
           </span>
         )}
         <span style={{ marginLeft: "auto" }} />
