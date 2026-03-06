@@ -1,13 +1,15 @@
-# Python
-backend/.venv/
-backend/.venv311/
-backend/__pycache__/
-backend/app/__pycache__/
-backend/tests/__pycache__/
+# Python — venvs anywhere in the repo
+.venv/
+.venv311/
+**/.venv/
+**/.venv311/
 **/__pycache__/
 *.pyc
 *.pyo
 .pytest_cache/
+
+# Claude local session files
+.claude/
 
 # Environment secrets — never commit
 backend/.env
