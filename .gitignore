@@ -27,7 +27,6 @@ web/.env.local
 
 # Claude instructions
 CLAUDE.md
-agent_docs/
 
 # OS
 .DS_Store
