@@ -156,8 +156,9 @@ def run_triage(cases: list[MockCase]) -> TriageResult:
         }
         append_audit_log(audit_record)
 
-    # Sort by risk_score descending (URGENT/HIGH at top)
-    decisions.sort(key=lambda d: d.risk_score, reverse=True)
+    # Sort by tier first, then by risk_score descending within each tier
+    _TIER_ORDER = {"URGENT": 0, "HIGH": 1, "MEDIUM": 2, "LOW": 3, "AUTO_CLEAR": 4}
+    decisions.sort(key=lambda d: (_TIER_ORDER.get(d.risk_tier, 9), -d.risk_score))
 
     result = TriageResult(
         run_id=run_id,
