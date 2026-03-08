@@ -186,14 +186,14 @@ function CaseRow({ kase, selected, onClick }: { kase: TriageCase; selected: bool
         background: selected ? "#1e1e1e" : "transparent",
         borderLeft: selected ? `3px solid ${color}` : "3px solid transparent",
         display: "grid",
-        gridTemplateColumns: "80px 1fr 50px 70px 60px",
+        gridTemplateColumns: "60px 55px 40px 1fr 50px",
         gap: 6,
         alignItems: "center",
       }}
     >
-      <span style={{ color, fontWeight: "bold", fontSize: 11 }}>{kase.risk_tier}</span>
+      <span style={{ color, fontWeight: "bold", fontSize: 11 }}>{kase.risk_tier === "AUTO_CLEAR" ? "CLEAR" : kase.risk_tier}</span>
       <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{kase.case_id}</span>
-      <span style={{ color, textAlign: "right", fontWeight: "bold" }}>{kase.risk_score}</span>
+      <span style={{ color, textAlign: "center", fontWeight: "bold" }}>{kase.risk_score}</span>
       <span style={{ color: "#888", fontSize: 11 }}>{kase.alert_type.replace(/_/g, " ")}</span>
       <span style={{ color: "#555", fontSize: 11, textAlign: "right" }}>SLA {slaLabel(kase.sla_target_minutes)}</span>
     </div>
@@ -472,10 +472,10 @@ export default function Home() {
           <div style={{
             padding: "6px 10px", borderBottom: "1px solid #1a1a1a",
             color: "#555", fontSize: 11,
-            display: "grid", gridTemplateColumns: "80px 1fr 50px 70px 60px", gap: 6,
+            display: "grid", gridTemplateColumns: "60px 55px 40px 1fr 50px", gap: 6,
           }}>
-            <span>TIER</span><span>CASE</span><span style={{ textAlign: "right" }}>SCORE</span>
-            <span>TYPE</span><span style={{ textAlign: "right" }}>SLA</span>
+            <span style={{ textAlign: "center" }}>TIER</span><span style={{ textAlign: "center" }}>CASE</span><span style={{ textAlign: "center" }}>SCORE</span>
+            <span style={{ textAlign: "center" }}>TYPE</span><span style={{ textAlign: "center" }}>SLA</span>
           </div>
 
           {cases.length === 0 ? (
